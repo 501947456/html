@@ -1,0 +1,45 @@
+1.'关键字’ in 对象名
+1.1 判断关键字是否在关键字中 返回值是boolean类型，使用in关键字的时候，属性名称为字符串类型，需要使用引号引起来
+1.2 判断数组中是否存在某个键
+
+2 in 关键字判断数组的时候是判断索引是否存在，而不是值
+2.1 如何判断数组中是否存在指定的值
+arr.indexOf(要查找的值)  # 返回值为指定的数对应的索引，如果没有找到，返回-1
+
+3.对象,除了function 类型为function 其他对象打印出来的类型均为object
+var now= new Date();
+
+console.log(typeof new Date());
+console.log(typeof function(){});
+
+
+function changeParam(param){
+    param.name='gxxx';
+    param = {  #重新创建了对象，和外面的param没有任何关系
+        name:'hello',
+    }
+    console.log(param.name);
+
+}
+param={
+    name:'hhhh',
+}
+changeParam(param);  #hello
+console.log(param.name);#gxxx
+
+4.变量声明
+var a=123;#局部变量
+a=100 #全局变量
+console.log(window.a)  #变量a加载到windown中
+
+
+5.delete 关键字可以用来删除对象的属性，还有未使用var声明的变量
+delete关键字有返回值，用来表示删除属性是否成功返回true/false
+var result=delete obj.name;
+num = 10;
+delete num
+
+var num1=10;
+delete num1  #删除失败
+
+delete obj.gender;  #删除不存在属性，也能成功，返回true
