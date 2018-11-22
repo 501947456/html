@@ -43,3 +43,39 @@ var num1=10;
 delete num1  #删除失败
 
 delete obj.gender;  #删除不存在属性，也能成功，返回true
+
+
+6 函数
+6.1 函数声明
+function funcName(){
+}
+6.2 函数表达式
+在使用函数表达式声明函数的时候，function 后面的可以跟函数名，但是这个函数名，只限在函数内部使用，外部无法使用
+
+var functionName1=function name(){}
+
+7. DOM操作
+增
+docuemnt.createElement
+appendChild
+删
+removeChild
+
+改
+style
+id
+className
+innerHtml
+innerText
+查
+getElementById......
+
+8. 异常处理
+try{
+ //可能出现异常的代码
+}
+ catch(e) {
+  //出现异常后的处理代码
+  console.log(e)
+}finally{
+}
