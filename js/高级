@@ -152,4 +152,6 @@ Person.prototype.exercise = function(){
 当使用对象去访问属性和方法的时候
 会首先在对象自己内部进行查找，如果找到了，就直接使用，如果没有找到，就去原型中查找，查找后使用
 
-
+通过对象访问构造函数
+p.constructor
+Person.prototype.constructor
