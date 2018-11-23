@@ -78,4 +78,63 @@ try{
   //出现异常后的处理代码
   console.log(e)
 }finally{
+//不管有没有异常，都会执行这里的代码，一般用来释放资源
 }
+手动抛出异常信息使用throw 关键字
+try{
+  throw "error message ";
+}catch(e){
+console.log(e);  #可以获取到抛出的异常“error message”
+}
+
+function sum(num1,num2){
+  if num1 == undefined || num2 == undefined {
+    throw {
+       errMsg: "error message",
+       errCode: -1
+    }
+  }else{
+   return num1 + num2;
+  }
+
+}
+
+try{
+  sum(0);
+}catch(e) {
+  console.log(e.errMsg); #异常捕获
+}
+
+
+对象
+在js中，键值对的组合就是对象
+
+对象继承
+混入式继承 for  in
+for(var k in obj1){
+ //k 可以获取到对象的每一个属性
+ //obj1[k]可以获取到对象的每一个属性值
+ //这里使用k给对象增加属性的时候，不能使用点语法
+ obj[k]=obj1[k]
+}
+
+创建对象的第二种方式，使用构造函数
+var obj = new Object()
+
+创建对象的第三种方式，使用自定义构造函数
+构造函数用来初始化对象属性值，new 用来创建对象
+
+//构造函数，首字母要大写，以便区分
+
+function Person(){
+//默认隐含的操作，把new 新创建出来的对象赋值给this
+  this.name='sss';
+  this.age=50;
+  this.sayHello=function(){}
+ //默认返回我们新创建的对象，如果我们自己写return语句，return 的是空值，或者基本类型的值，都会默认返回创建出来的对象
+ //如果返回的是object的值，将不返回新创建的对象
+}
+var p =new Persion();
+
+
+
